@@ -46,3 +46,7 @@ exampleModal.addEventListener('show.bs.modal', function (event) {
 
 }
 
+function navigateToPostpage() {
+  window.location.href = "/Users/ankit/Downloads/Course+6+Project+Stub+-+Scribbler/html/postslist.html";
+}
+
