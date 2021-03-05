@@ -56,3 +56,37 @@ body{
     font-family: 'Ubuntu Mono', monospace;
     font-size: 15px;
 }
+#form-submit-button{
+    background-color: #16c79a;
+    color: white;
+    margin: 5%;
+}
+#recipient-name {
+    background-color: #edeef7;
+}
+#recipient-username {
+    background-color: #edeef7;
+}
+#recipient-password {
+    background-color: #edeef7;
+}
+#recipient-confirm-password {
+    background-color: #edeef7;
+}
+#not-member-label-div {
+text-align: end;
+margin-bottom: 5%;
+margin-right: 0;
+padding-right: 0;
+border-right: 0;
+font-weight: bolder;
+}
+#signup-label-div {
+    text-align: left;
+    margin-bottom: 5%;
+    margin-left: 5px;
+    padding-left: 0;
+    border-left: 0;
+    font-weight: bolder;
+    color: blue;
+}
