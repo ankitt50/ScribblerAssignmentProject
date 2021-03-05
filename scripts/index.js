@@ -6,8 +6,8 @@ function getheader() {
 '<label id="heading-subtext">Explore, Imagine, Create</label>'+
 '</div>'+
 '<div id="header-right">'+
-'<button class="sign-btn" data-bs-toggle="modal" data-bs-target="#signUpModal">Signup</button>'+
-'<button class="sign-btn" data-bs-toggle="modal" data-bs-target="#signInModal">Signin</button>'+
+'<button class="sign-btn" data-bs-toggle="modal" data-bs-target="#signUpModal">Sign Up</button>'+
+'<button class="sign-btn" data-bs-toggle="modal" data-bs-target="#signInModal">Sign In</button>'+
 '</div>';
 
 }
