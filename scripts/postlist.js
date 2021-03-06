@@ -39,8 +39,10 @@ function getMainBody() {
               '</div>'+
               '<div class="col-md-8">'+
                 '<div class="card-body">'+
-                  '<h5 class="card-title">'+title[i]+'</h5>'+
+                  '<h5 id="card-title-inline" class="card-title">'+title[i]+'</h5>'+
+                  '<i id="card-icon-inline'+i+'"'+' class="fas fa-trash"></i>'+
                   '<p class="card-text">'+body[i]+'</p>'+
+                  '<div align="right"><i id="card-dot-icon-inline'+i+'"'+' class="fas fa-ellipsis-h"></i></div>'+
                 '</div>'+
               '</div>'+
             '</div>'+
@@ -58,8 +60,10 @@ function getMainBody() {
               '</div>'+
               '<div class="col-md-8">'+
                 '<div class="card-body">'+
-                  '<h5 class="card-title">'+title[i+1]+'</h5>'+
+                  '<h5 id="card-title-inline" class="card-title">'+title[i+1]+'</h5>'+
+                  '<i id="card-icon-inline'+(i+1)+'" class="fas fa-trash"></i>'+
                   '<p class="card-text" >'+body[i+1]+'</p>'+
+                  '<div align="right"><i id="card-dot-icon-inline'+(i+1)+'"'+' class="fas fa-ellipsis-h"></i></div>'+
                 '</div>'+
               '</div>'+
             '</div>'+
@@ -82,8 +86,10 @@ function getMainBody() {
                 </div>\
                 <div class="col-md-8">\
                   <div class="card-body">\
-                    <h5 class="card-title">'+title[i]+'</h5>\
+                    <h5 id="card-title-inline" class="card-title">'+title[i]+'</h5>\
+                    <i id="card-icon-inline'+i+'"'+' class="fas fa-trash"></i>\
                     <p class="card-text">'+body[i]+'</p>\
+                    <div align="right"><i id="card-dot-icon-inline'+i+'"'+' class="fas fa-ellipsis-h"></i></div>\
                   </div>\
                 </div>\
               </div>\
@@ -111,8 +117,10 @@ function getMainBody() {
               '</div>'+
               '<div class="col-md-8">'+
                 '<div class="card-body">'+
-                  '<h5 class="card-title">'+title[i]+'</h5>'+
+                  '<h5 id="card-title-inline" class="card-title">'+title[i]+'</h5>'+
+                  '<i id="card-icon-inline'+i+'" class="fas fa-trash"></i>'+
                   '<p class="card-text">'+body[i]+'</p>'+
+                  '<div align="right"><i id="card-dot-icon-inline'+i+'"'+' class="fas fa-ellipsis-h"></i></div>'+
                 '</div>'+
               '</div>'+
             '</div>'+
@@ -130,8 +138,10 @@ function getMainBody() {
               '</div>'+
               '<div class="col-md-8">'+
                 '<div class="card-body">'+
-                  '<h5 class="card-title">'+title[i+1]+'</h5>'+
+                  '<h5 id="card-title-inline" class="card-title">'+title[i+1]+'</h5>'+
+                  '<i id="card-icon-inline'+(i+1)+'" class="fas fa-trash"></i>'+
                   '<p class="card-text" >'+body[i+1]+'</p>'+
+                  '<div align="right"><i id="card-dot-icon-inline'+(i+1)+'"'+' class="fas fa-ellipsis-h"></i></div>'+
                 '</div>'+
               '</div>'+
             '</div>'+
@@ -154,8 +164,10 @@ function getMainBody() {
                 '</div>'+
                 '<div class="col-md-8">'+
                   '<div class="card-body">'+
-                    '<h5 class="card-title">'+title[i]+'</h5>'+
+                    '<h5 id="card-title-inline" class="card-title">'+title[i]+'</h5>'+
+                    '<i id="card-icon-inline'+i+'" class="fas fa-trash"></i>'+
                     '<p class="card-text">'+body[i]+'</p>'+
+                    '<div align="right"><i id="card-dot-icon-inline'+i+'"'+' class="fas fa-ellipsis-h"></i></div>'+
                   '</div>'+
                 '</div>'+
               '</div>'+
@@ -173,8 +185,10 @@ function getMainBody() {
                 '</div>'+
                 '<div class="col-md-8">'+
                   '<div class="card-body">'+
-                    '<h5 class="card-title">'+title[i+1]+'</h5>'+
+                    '<h5 id="card-title-inline" class="card-title">'+title[i+1]+'</h5>'+
+                    '<i id="card-icon-inline'+(i+1)+'" class="fas fa-trash"></i>'+
                     '<p class="card-text" >'+body[i+1]+'</p>'+
+                    '<div align="right"><i id="card-dot-icon-inline'+(i+1)+'"'+' class="fas fa-ellipsis-h"></i></div>'+
                   '</div>'+
                 '</div>'+
               '</div>'+
@@ -218,4 +232,17 @@ modalBodyInput.value = recipient;
 });
 
 }
+
+for (var i=0;i<authors.length;i++) {
+  document.getElementById('card-icon-inline'+i.toString()).addEventListener("click", function(event){
+    alert('delete pressed');
+    });
+}
+
+for (var i=0;i<authors.length;i++) {
+  document.getElementById('card-dot-icon-inline'+i.toString()).addEventListener("click", function(event){
+    alert('dot pressed');
+    });
+}
+
 

@@ -90,3 +90,6 @@ body{
         font-weight: bolder;
         color: blue;
     }
+    #card-title-inline{
+        display: inline;
+    }
