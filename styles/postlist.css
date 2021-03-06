@@ -14,12 +14,14 @@ body{
     align-items: center;
 }
 #top-header-container{
+    background-color: #ffeedd;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     height: 10%;
+    padding-bottom: 2%;
 }
 .sign-btn{
     color: white;
@@ -36,3 +38,55 @@ body{
     font-family: 'Ubuntu Mono', monospace;
     font-size: 15px;
 }
+.card-text{
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+}
+
+.card-body {
+    background-color: #edeef7;
+    font-size: 10px;
+}
+#postlist-main-body-container{
+    background-color: #ffeedd;;
+}
+.card-author{
+    font-size: 10px;
+    margin-top: 30%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.card-title{
+    overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        font-size: 10px;
+}
+ #card-outer-container{
+    border-radius: 20px;
+}
+#form-submit-button{
+    background-color: #16c79a;
+    color: white;
+    margin: 5%;
+}
+#not-member-label-div {
+    text-align: end;
+    margin-bottom: 5%;
+    margin-right: 0;
+    padding-right: 0;
+    border-right: 0;
+    font-weight: bolder;
+    }
+    #signup-label-div {
+        text-align: left;
+        margin-bottom: 5%;
+        margin-left: 5px;
+        padding-left: 0;
+        border-left: 0;
+        font-weight: bolder;
+        color: blue;
+    }
