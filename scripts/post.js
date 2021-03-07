@@ -1,3 +1,6 @@
+
+var likesCount = 0;
+var commentsArray = [];
 getheader();
 function getheader() {
 
@@ -44,16 +47,124 @@ exampleModal.addEventListener('show.bs.modal', function (event) {
 });
 
 }
-getMainBody(false,'one persone has liked this');
+getMainBody(false);
 
-function getMainBody(isEditable,text) {
-  document.getElementById('bottom-btn-container').innerHTML='<h3 contentEditable="'+isEditable+'">'+sessionStorage.getItem('title')+'</h3>'+
+function getMainBody(isEditable) {
+  var editOrsaveBtn = getEditOrSave(isEditable);
+  document.getElementById('bottom-btn-container').innerHTML='<label id="title" '+getBorderStyle(isEditable)+' contentEditable="'+isEditable+'">'+sessionStorage.getItem('title')+'</label>'+
   '<div id="author-name-row">'+
-  '<h5>'+sessionStorage.getItem('author')+'</h5>'+
-  '<input type="submit" value="Edit"/>'+
+  '<label>'+sessionStorage.getItem('author')+'</label>'+
+  '<button class="pink-btn" onClick="makeBlogEditable('+isEditable+')" >'+editOrsaveBtn+'</button>'+
   '</div>'+
-  '<p contentEditable="'+isEditable+'">'+sessionStorage.getItem('body')+'</p>'+
-  '<input type="submit" value="Like"/>'+
-  '<p>'+text+'</p>';
+  '<p id="body" '+getBorderStyle(isEditable)+' contentEditable="'+isEditable+'">'+sessionStorage.getItem('body')+'</p>'+
+  '<div class="like-btn-container">'+
+  '<button class="pink-btn" onClick="incrementLikesCount()"/>'+getLikeOrLiked()+'</button>'+
+  '<p>'+getLikesText()+'</p>'+
+  '</div>'+
+  '<div class="comment-box-container">'+
+  '<div class="comment-box-inner-container">'+
+  '<textarea id="comment-box" placeholder="Leave a comment...."></textarea>'+
+  '</div>'+
+  '<input class="pink-btn" type="submit" value="Comment" onClick="addComment('+isEditable+')"/>'+
+  '</div>'+
+  getComments();
+}
+
+function getLikesText() {
+  if(likesCount>0){
+    return likesCount+' people like this!';
+  }
+  else {
+    return 'Be the first one to like this!';
+  }
+
 
 }
+ function incrementLikesCount() {
+   likesCount+=1;
+   getMainBody(false);
+ }
+
+ function makeBlogEditable(isEditable) {
+   if(isEditable){
+    getMainBody(false);
+   }
+   else {
+    getMainBody(true);
+    // document.getElementById('title').style.;
+   }
+  
+ }
+
+ function getEditOrSave(isEditable) {
+  if(isEditable){
+    return 'Save'+'<i class="fa fa-floppy-o"></i>';
+   }
+   else {
+    var titleBox = document.getElementById('title');
+    // console.log(titleBox);
+    if(titleBox!=null) {
+      sessionStorage.setItem('title',titleBox.innerHTML);
+      // console.log(titleBox.innerHTML);
+      // console.log(titleBox.value);
+    }
+    var bodyBox = document.getElementById('body');
+    // console.log(bodyBox);
+    if(bodyBox!=null) {
+      sessionStorage.setItem('body',bodyBox.innerHTML);
+      // console.log(bodyBox.innerHTML);
+      // console.log(bodyBox.value);
+    }
+    return 'Edit'+'<i class="fa fa-pencil-square-o"></i>';
+   }
+ }
+
+ function getLikeOrLiked(){
+   if(likesCount>0){
+     return '<i class="fa fa-thumbs-up"></i>'+'Liked';
+   }
+   else {
+     return '<i class="fa fa-thumbs-up"></i>'+'Like';
+   }
+ }
+
+ function getComments(){
+   if (commentsArray.length<=0){
+     return '<div id="comments-main-container"><label id="comments-heading">All Comments</label></div>';
+   }
+   else {
+     var template = '';
+     template+='<div id="comments-main-container">';
+     template+= '<label id="comments-heading">All Comments</label>';
+
+     commentsArray.forEach(function(index,element){
+       template+='<div class="outer-comment-container">';
+       template+='<div class="inner-comment-container">';
+       template+='<p>'+index.toString()+'</p>';
+       template+='</div>';
+       template+='</div>';
+     });
+     template+='</div>';
+
+     return template;
+
+   }
+ }
+
+ function addComment(isEditable){
+   var textareaText = document.getElementById('comment-box').value;
+   if(textareaText!=null && textareaText!='') {
+    commentsArray.push(textareaText);
+    getMainBody(isEditable);
+   }
+ }
+
+ function getBorderStyle(isEditable){
+   if (isEditable) {
+    return 'style="border: 1px solid pink"';
+   }
+   else {
+    return 'style="border: none"';
+   }
+   
+ }
