@@ -43,6 +43,13 @@ function getMainBody() {
                   '<i id="card-icon-inline'+i+'"'+' class="fas fa-trash"></i>'+
                   '<p class="card-text">'+body[i]+'</p>'+
                   '<div align="right"><i id="card-dot-icon-inline'+i+'"'+' class="fas fa-ellipsis-h"></i></div>'+
+                  '<div '+'id="popup_box-'+(i)+'"'+' class="popup_box">'+
+      '<label>Are you sure you want to delete this post?</label>'+
+      '<div class="btns">'+
+        '<button '+'id="btn1-'+i+'"'+' class="btn1">Yes</button>'+
+        '<button '+'id="btn2-'+i+'"'+' class="btn2">No</button>'+
+      '</div>'+
+    '</div>'+
                 '</div>'+
               '</div>'+
             '</div>'+
@@ -64,6 +71,13 @@ function getMainBody() {
                   '<i id="card-icon-inline'+(i+1)+'" class="fas fa-trash"></i>'+
                   '<p class="card-text" >'+body[i+1]+'</p>'+
                   '<div align="right"><i id="card-dot-icon-inline'+(i+1)+'"'+' class="fas fa-ellipsis-h"></i></div>'+
+                  '<div '+'id="popup_box-'+(i+1)+'"'+' class="popup_box">'+
+      '<label>Are you sure you want to delete this post?</label>'+
+      '<div class="btns">'+
+        '<button '+'id="btn1-'+(i+1)+'"'+' class="btn1">Yes</button>'+
+        '<button '+'id="btn2-'+(i+1)+'"'+' class="btn2">No</button>'+
+      '</div>'+
+    '</div>'+
                 '</div>'+
               '</div>'+
             '</div>'+
@@ -90,6 +104,13 @@ function getMainBody() {
                     <i id="card-icon-inline'+i+'"'+' class="fas fa-trash"></i>\
                     <p class="card-text">'+body[i]+'</p>\
                     <div align="right"><i id="card-dot-icon-inline'+i+'"'+' class="fas fa-ellipsis-h"></i></div>\
+                    <div '+'id="popup_box-'+(i)+'"'+' class="popup_box">\
+      <label>Are you sure you want to delete this post?</label>\
+      <div class="btns">\
+        <button '+'id="btn1-'+i+'"'+' class="btn1">Yes</button>\
+        <button '+'id="btn2-'+i+'"'+' class="btn2">No</button>\
+      </div>\
+    </div>\
                   </div>\
                 </div>\
               </div>\
@@ -121,6 +142,13 @@ function getMainBody() {
                   '<i id="card-icon-inline'+i+'" class="fas fa-trash"></i>'+
                   '<p class="card-text">'+body[i]+'</p>'+
                   '<div align="right"><i id="card-dot-icon-inline'+i+'"'+' class="fas fa-ellipsis-h"></i></div>'+
+                  '<div '+'id="popup_box-'+(i)+'"'+' class="popup_box">'+
+      '<label>Are you sure you want to delete this post?</label>'+
+      '<div class="btns">'+
+        '<button '+'id="btn1-'+i+'"'+' class="btn1">Yes</button>'+
+        '<button '+'id="btn2-'+i+'"'+' class="btn2">No</button>'+
+      '</div>'+
+    '</div>'+
                 '</div>'+
               '</div>'+
             '</div>'+
@@ -142,6 +170,13 @@ function getMainBody() {
                   '<i id="card-icon-inline'+(i+1)+'" class="fas fa-trash"></i>'+
                   '<p class="card-text" >'+body[i+1]+'</p>'+
                   '<div align="right"><i id="card-dot-icon-inline'+(i+1)+'"'+' class="fas fa-ellipsis-h"></i></div>'+
+                  '<div '+'id="popup_box-'+(i+1)+'"'+' class="popup_box">'+
+      '<label>Are you sure you want to delete this post?</label>'+
+      '<div class="btns">'+
+        '<button '+'id="btn1-'+(i+1)+'"'+' class="btn1">Yes</button>'+
+        '<button '+'id="btn2-'+(i+1)+'"'+' class="btn2">No</button>'+
+      '</div>'+
+    '</div>'+
                 '</div>'+
               '</div>'+
             '</div>'+
@@ -168,6 +203,13 @@ function getMainBody() {
                     '<i id="card-icon-inline'+i+'" class="fas fa-trash"></i>'+
                     '<p class="card-text">'+body[i]+'</p>'+
                     '<div align="right"><i id="card-dot-icon-inline'+i+'"'+' class="fas fa-ellipsis-h"></i></div>'+
+                    '<div '+'id="popup_box-'+(i)+'"'+' class="popup_box">'+
+      '<label>Are you sure you want to delete this post?</label>'+
+      '<div class="btns">'+
+        '<button '+'id="btn1-'+i+'"'+' class="btn1">Yes</button>'+
+        '<button '+'id="btn2-'+i+'"'+' class="btn2">No</button>'+
+      '</div>'+
+    '</div>'+
                   '</div>'+
                 '</div>'+
               '</div>'+
@@ -189,6 +231,13 @@ function getMainBody() {
                     '<i id="card-icon-inline'+(i+1)+'" class="fas fa-trash"></i>'+
                     '<p class="card-text" >'+body[i+1]+'</p>'+
                     '<div align="right"><i id="card-dot-icon-inline'+(i+1)+'"'+' class="fas fa-ellipsis-h"></i></div>'+
+                    '<div '+'id="popup_box-'+(i+1)+'"'+' class="popup_box">'+
+      '<label>Are you sure you want to delete this post?</label>'+
+      '<div class="btns">'+
+        '<button '+'id="btn1-'+(i+1)+'"'+' class="btn1">Yes</button>'+
+        '<button '+'id="btn2-'+(i+1)+'"'+' class="btn2">No</button>'+
+      '</div>'+
+    '</div>'+
                   '</div>'+
                 '</div>'+
               '</div>'+
@@ -233,10 +282,29 @@ modalBodyInput.value = recipient;
 
 }
 
-for (var i=0;i<authors.length;i++) {
-  document.getElementById('card-icon-inline'+i.toString()).addEventListener("click", function(event){
-    alert('delete pressed');
-    });
+addClickToTrashIcon();
+
+function addClickToTrashIcon() {
+
+  for (var i=0;i<authors.length;i++) {
+    document.getElementById('card-icon-inline'+i.toString()).addEventListener("click", function(event){
+      var index = event.target.id.toString().slice(16,17);
+      document.getElementById('popup_box-'+index).style.display='block';
+      document.getElementById('btn1-'+index).addEventListener("click", function(event) {
+        document.getElementById('popup_box-'+index).style.display='none';
+        authors.splice(index,1);
+        title.splice(index,1);
+        body.splice(index,1);
+        document.getElementById('postlist-main-body-container').innerHTML='';
+        getMainBody();
+        addClickToTrashIcon();
+      });
+      document.getElementById('btn2-'+index).addEventListener("click", function(event) {
+        document.getElementById('popup_box-'+index).style.display='none';
+      });
+      });
+  }
+
 }
 
 for (var i=0;i<authors.length;i++) {
