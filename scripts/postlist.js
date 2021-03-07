@@ -1,6 +1,13 @@
+
+//Script method to add header template
 getheader();
+
+// Script method to add event listeners to the modal buttons
 getModal('signUpModal');
 getModal('signInModal');
+
+// arrays to keep track of total posts and their information : title, author, body
+
 var authors = ['Srishti Gupta','Colby Fayock','Yazeed Bzadough','Cedd Burge','Srishti Gupta'];
 var title = ['\'let\' me be a \'const\'(ant), not a \'var\'(iable)!</h5>','What is linting and how can it save you time?','How to Get More Views on Your Tech Blog','How to write easily describable code','Everything you should know about \'module\' & \'require\' in Node.js'];
 var body = [
@@ -10,7 +17,12 @@ var body = [
     'When code is not describable using words, most people have to do some mental mapping to turn it in to words. This wastes mental energy, and you run the risk of getting the mapping wrong. Different people will map to different words, which leads to confusion when discussing the code.',
     'Node.js treats each JavaScript file as a separate module. For instance, if you have a file containing some code and this file is named xyz.js, then this file is treated as a module in Node, and you can say that you\'ve created a module named xyz.'
 ];
+
+
+//dynamically add cards to the page
 getMainBody();
+
+// method to add header template
 function getheader() {
 
     document.getElementById('top-header-container').innerHTML='<div id="header-left">'+
@@ -23,12 +35,15 @@ function getheader() {
 '</div>';
 }
 
+//dynamically add cards to the page
 function getMainBody() {
   if(authors.length<=0){
+    // handle situation when zero cards are present
     document.getElementById('postlist-main-body-container').innerHTML='';
     return;
   }
     if(authors.length%2!=0) {
+      // handle situation when odd cards are present
         document.getElementById('postlist-main-body-container').innerHTML+='<div class="container">';
         for(var i=0;i<authors.length-1;i+=2) {
             document.getElementById('postlist-main-body-container').innerHTML+='<div class="row justify-content-md-center">'+
@@ -128,6 +143,7 @@ function getMainBody() {
 
     }
     else {
+      // handle situation when even cards are present
         document.getElementById('postlist-main-body-container').innerHTML+='<div class="container">';
         for(var i=0;i<authors.length-2;i+=2) {
             document.getElementById('postlist-main-body-container').innerHTML+='<div class="row justify-content-md-center">'+
@@ -255,6 +271,7 @@ function getMainBody() {
 }
 
 
+// Script method to add event listeners to the modal buttons
 function getModal(modalName) {
   var exampleModal = document.getElementById(modalName);
 exampleModal.addEventListener('show.bs.modal', function (event) {
@@ -285,8 +302,15 @@ modalBodyInput.value = recipient;
 
 }
 
+// add eventlistener to the delete icon
 addClickToTrashIcon();
+
+// add eventlistener to the more details icon
 addClickToMoreIcon();
+
+
+
+// add eventlistener to the delete icon
 
 function addClickToTrashIcon() {
 
@@ -313,6 +337,7 @@ function addClickToTrashIcon() {
 }
 
 
+// add eventlistener to the more details icon
 function addClickToMoreIcon() {
 
   for (var i=0;i<authors.length;i++) {
@@ -327,13 +352,5 @@ function addClickToMoreIcon() {
       });
   }
 }
-
-/*
-for (var i=0;i<authors.length;i++) {
-  document.getElementById('card-dot-icon-inline'+i.toString()).addEventListener("click", function(event){
-    alert('dot pressed');
-    });
-}
-*/
 
 

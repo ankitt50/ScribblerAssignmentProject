@@ -1,3 +1,4 @@
+//Script method to add header template
 getheader();
 function getheader() {
 
@@ -12,6 +13,8 @@ function getheader() {
 
 }
 
+
+// Script method to add event listeners to the modal buttons
 getModal('signUpModal');
 getModal('signInModal');
 getModal('createPostModal');
@@ -46,6 +49,7 @@ exampleModal.addEventListener('show.bs.modal', function (event) {
 
 }
 
+// method to navigate to next page
 function navigateToPostpage() {
   window.location.href = "/Users/ankit/Downloads/Course+6+Project+Stub+-+Scribbler/html/postslist.html";
 }

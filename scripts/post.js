@@ -1,6 +1,11 @@
 
+// variable to keep track of number of likes
 var likesCount = 0;
+
+// array to keep record of all comments added
 var commentsArray = [];
+
+//Script method to add header template
 getheader();
 function getheader() {
 
@@ -15,6 +20,8 @@ function getheader() {
 
 }
 
+
+// Script method to add event listeners to the modal buttons
 getModal('signUpModal');
 getModal('signInModal');
 
@@ -47,6 +54,9 @@ exampleModal.addEventListener('show.bs.modal', function (event) {
 });
 
 }
+
+// dynamically adds text to the bottom div according to the saved title/body and comments
+
 getMainBody(false);
 
 function getMainBody(isEditable) {
@@ -70,6 +80,8 @@ function getMainBody(isEditable) {
   getComments();
 }
 
+
+// changes Like button text dynamically
 function getLikesText() {
   if(likesCount>0){
     return likesCount+' people like this!';
@@ -80,45 +92,43 @@ function getLikesText() {
 
 
 }
+
+// increments number of likes when like button is pressed
  function incrementLikesCount() {
    likesCount+=1;
    getMainBody(false);
  }
 
+ // make title/body editable according to edit and save buttons
  function makeBlogEditable(isEditable) {
    if(isEditable){
     getMainBody(false);
    }
    else {
     getMainBody(true);
-    // document.getElementById('title').style.;
    }
   
  }
 
+ // make chnages to edit and save buttons
  function getEditOrSave(isEditable) {
   if(isEditable){
     return 'Save'+'<i class="fa fa-floppy-o"></i>';
    }
    else {
     var titleBox = document.getElementById('title');
-    // console.log(titleBox);
     if(titleBox!=null) {
       sessionStorage.setItem('title',titleBox.innerHTML);
-      // console.log(titleBox.innerHTML);
-      // console.log(titleBox.value);
     }
     var bodyBox = document.getElementById('body');
-    // console.log(bodyBox);
     if(bodyBox!=null) {
       sessionStorage.setItem('body',bodyBox.innerHTML);
-      // console.log(bodyBox.innerHTML);
-      // console.log(bodyBox.value);
     }
     return 'Edit'+'<i class="fa fa-pencil-square-o"></i>';
    }
  }
 
+ // changes Like button text dynamically
  function getLikeOrLiked(){
    if(likesCount>0){
      return '<i class="fa fa-thumbs-up"></i>'+'Liked';
@@ -128,6 +138,7 @@ function getLikesText() {
    }
  }
 
+ // changes comment text dynamically whenever user adds a comment
  function getComments(){
    if (commentsArray.length<=0){
      return '<div id="comments-main-container"><label id="comments-heading">All Comments</label></div>';
@@ -151,6 +162,7 @@ function getLikesText() {
    }
  }
 
+ // method to add a comment
  function addComment(isEditable){
    var textareaText = document.getElementById('comment-box').value;
    if(textareaText!=null && textareaText!='') {
@@ -159,6 +171,7 @@ function getLikesText() {
    }
  }
 
+ // dynamically change border of title/body 
  function getBorderStyle(isEditable){
    if (isEditable) {
     return 'style="border: 1px solid pink"';
