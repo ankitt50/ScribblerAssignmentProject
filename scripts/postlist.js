@@ -283,6 +283,7 @@ modalBodyInput.value = recipient;
 }
 
 addClickToTrashIcon();
+addClickToMoreIcon();
 
 function addClickToTrashIcon() {
 
@@ -298,6 +299,7 @@ function addClickToTrashIcon() {
         document.getElementById('postlist-main-body-container').innerHTML='';
         getMainBody();
         addClickToTrashIcon();
+        addClickToMoreIcon();
       });
       document.getElementById('btn2-'+index).addEventListener("click", function(event) {
         document.getElementById('popup_box-'+index).style.display='none';
@@ -307,10 +309,28 @@ function addClickToTrashIcon() {
 
 }
 
+
+function addClickToMoreIcon() {
+
+  for (var i=0;i<authors.length;i++) {
+    document.getElementById('card-dot-icon-inline'+i.toString()).addEventListener("click", function(event){
+      var index = event.target.id.toString().slice(20,21);
+      console.log(index);
+      console.log(authors[parseInt(index)]);
+      sessionStorage.setItem('author',authors[parseInt(index)]);
+      sessionStorage.setItem('title',title[parseInt(index)]);
+      sessionStorage.setItem('body',body[parseInt(index)]);
+      window.location.href = "/Users/ankit/Downloads/Course+6+Project+Stub+-+Scribbler/html/post.html";
+      });
+  }
+}
+
+/*
 for (var i=0;i<authors.length;i++) {
   document.getElementById('card-dot-icon-inline'+i.toString()).addEventListener("click", function(event){
     alert('dot pressed');
     });
 }
+*/
 
 
