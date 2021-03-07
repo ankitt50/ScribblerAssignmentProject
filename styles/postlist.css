@@ -68,6 +68,10 @@ body{
  #card-outer-container{
     border-radius: 20px;
 }
+#card-outer-container:hover{
+    border-radius: 20px;
+    box-shadow: 2px 2px pink;
+}
 #form-submit-button{
     background-color: #16c79a;
     color: white;
@@ -138,4 +142,12 @@ body{
         margin-right: 40px;
         background: green;
         border: 1px solid green;
+      }
+      i{
+          cursor: pointer;
+      }
+      .fa-trash{
+        position: absolute;
+        top:10px;
+        right: 10px;
       }
