@@ -73,6 +73,12 @@ body{
 #recipient-confirm-password {
     background-color: #edeef7;
 }
+#post-message-text{
+    background-color: #edeef7;
+}
+#recipient-post-title{
+    background-color: #edeef7;
+}
 #not-member-label-div {
 text-align: end;
 margin-bottom: 5%;
