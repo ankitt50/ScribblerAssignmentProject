@@ -13,6 +13,33 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <!-- StyleSheet file -->
     <link rel="stylesheet" href="../styles/postlist.css">
+    <style>
+      #card-outer-container{
+            max-width: 450px;
+        }
+        @media only screen and (min-width: 500px) {
+        #card-outer-container{
+            max-width: 200px;
+        }
+        #extra-padding-div{
+          max-width: 0px;
+        }
+        .col-md-auto{
+          max-width: 200px;
+        }
+      }
+      @media only screen and (min-width: 1000px){
+        #card-outer-container{
+            max-width: 400px;
+        }
+        #extra-padding-div{
+          max-width: 0px;
+        }
+        .col-md-auto{
+          max-width: 400px;
+        }
+      }
+    </style>
 </head>
 
 <body>

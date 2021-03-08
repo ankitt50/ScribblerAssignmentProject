@@ -47,10 +47,10 @@ function getMainBody() {
         document.getElementById('postlist-main-body-container').innerHTML+='<div class="container">';
         for(var i=0;i<authors.length-1;i+=2) {
             document.getElementById('postlist-main-body-container').innerHTML+='<div class="row justify-content-md-center">'+
-      '<div class="col">'+
+      '<div id="extra-padding-div" class="col">'+
       '</div>'+
       '<div class="col-md-auto">'+
-        '<div id="card-outer-container" class="card mb-3" style="max-width: 450px;">'+
+        '<div id="card-outer-container" class="card mb-3">'+
             '<div class="row g-0">'+
               '<div class="col-md-4">'+
                 '<h5 class="card-author">'+authors[i]+'</h5>'+
@@ -74,11 +74,11 @@ function getMainBody() {
           '</div>'+
       '</div>'+
 
-      '<div class="col">'+
+      '<div id="extra-padding-div" class="col">'+
       '</div>'+
 
       '<div class="col-md-auto">'+
-        '<div id="card-outer-container" class="card mb-3" style="max-width: 450px;">'+
+        '<div id="card-outer-container" class="card mb-3">'+
             '<div class="row g-0">'+
               '<div class="col-md-4">'+
                 '<h5 class="card-author">'+authors[i+1]+'</h5>'+
@@ -101,17 +101,17 @@ function getMainBody() {
             '</div>'+
           '</div>'+
       '</div>'+
-      '<div class="col">'+
+      '<div id="extra-padding-div" class="col">'+
       '</div>'+
    '</div>';
         }
 
 
         document.getElementById('postlist-main-body-container').innerHTML+='<div class="row justify-content-md-center">\
-        <div class="col">\
+        <div id="extra-padding-div" class="col">\
         </div>\
         <div class="col-md-auto">\
-          <div id="card-outer-container" class="card mb-3" style="max-width: 450px;">\
+          <div id="card-outer-container" class="card mb-3">\
               <div class="row g-0">\
                 <div class="col-md-4">\
                   <h5 class="card-author">'+authors[i]+'</h5>\
@@ -134,9 +134,9 @@ function getMainBody() {
               </div>\
             </div>\
         </div>\
-        <div class="col">\
+        <div id="extra-padding-div" class="col">\
         </div>\
-        <div class="col">\
+        <div id="extra-padding-div" class="col">\
         </div>\
       </div>'+
   '</div>';
@@ -147,10 +147,10 @@ function getMainBody() {
         document.getElementById('postlist-main-body-container').innerHTML+='<div class="container">';
         for(var i=0;i<authors.length-2;i+=2) {
             document.getElementById('postlist-main-body-container').innerHTML+='<div class="row justify-content-md-center">'+
-      '<div class="col">'+
+      '<div id="extra-padding-div" class="col">'+
       '</div>'+
       '<div class="col-md-auto">'+
-        '<div id="card-outer-container" class="card mb-3" style="max-width: 450px;">'+
+        '<div id="card-outer-container" class="card mb-3">'+
             '<div class="row g-0">'+
               '<div class="col-md-4">'+
                 '<h5 class="card-author">'+authors[i]+'</h5>'+
@@ -174,11 +174,11 @@ function getMainBody() {
           '</div>'+
       '</div>'+
 
-      '<div class="col">'+
+      '<div id="extra-padding-div" class="col">'+
       '</div>'+
 
       '<div class="col-md-auto">'+
-        '<div id="card-outer-container" class="card mb-3" style="max-width: 450px;">'+
+        '<div id="card-outer-container" class="card mb-3">'+
             '<div class="row g-0">'+
               '<div class="col-md-4">'+
                 '<h5 class="card-author">'+authors[i+1]+'</h5>'+
@@ -201,17 +201,17 @@ function getMainBody() {
             '</div>'+
           '</div>'+
       '</div>'+
-      '<div class="col">'+
+      '<div id="extra-padding-div" class="col">'+
       '</div>'+
    '</div>';
         }
 
 
         document.getElementById('postlist-main-body-container').innerHTML+='<div class="row justify-content-md-center">'+
-        '<div class="col">'+
+        '<div id="extra-padding-div" class="col">'+
         '</div>'+
         '<div class="col-md-auto">'+
-          '<div id="card-outer-container" class="card mb-3" style="max-width: 450px;">'+
+          '<div id="card-outer-container" class="card mb-3">'+
               '<div class="row g-0">'+
                 '<div class="col-md-4">'+
                   '<h5 class="card-author">'+authors[i]+'</h5>'+
@@ -235,11 +235,11 @@ function getMainBody() {
             '</div>'+
         '</div>'+
   
-        '<div class="col">'+
+        '<div id="extra-padding-div" class="col">'+
         '</div>'+
   
         '<div class="col-md-auto">'+
-          '<div id="card-outer-container" class="card mb-3" style="max-width: 450px;">'+
+          '<div id="card-outer-container" class="card mb-3">'+
               '<div class="row g-0">'+
                 '<div class="col-md-4">'+
                   '<h5 class="card-author">'+authors[i+1]+'</h5>'+
@@ -262,7 +262,7 @@ function getMainBody() {
               '</div>'+
             '</div>'+
         '</div>'+
-        '<div class="col">'+
+        '<div id="extra-padding-div" class="col">'+
         '</div>'+
      '</div>'+
      '</div>';
