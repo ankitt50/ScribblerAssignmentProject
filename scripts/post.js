@@ -169,7 +169,7 @@ function getLikesText() {
  function addComment(isEditable){
    var textareaText = document.getElementById('comment-box').value;
    if(textareaText!=null && textareaText!='') {
-    commentsArray.push(textareaText);
+    commentsArray.unshift(textareaText);
     getMainBody(isEditable);
    }
  }
