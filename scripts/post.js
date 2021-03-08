@@ -83,6 +83,9 @@ function getMainBody(isEditable) {
 
 // changes Like button text dynamically
 function getLikesText() {
+  if(likesCount===1){
+    return likesCount+' person likes this';
+  }
   if(likesCount>0){
     return likesCount+' people like this!';
   }
